@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Java Lab Record</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Times New Roman", Times, serif;
+            background-color: #f3f5f8;
+            color: #243246;
+            line-height: 1.6;
+        }
+
+        /* Header */
+
+        header {
+            background-color: #1e3557;
+            color: white;
+            text-align: center;
+            padding: 35px 20px;
+            border-bottom: 5px solid #c6a66b;
+        }
+
+        header h1 {
+            font-size: 38px;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            margin-top: 8px;
+            font-size: 18px;
+            color: #e3e9f1;
+        }
+
+        /* Main Container */
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 30px auto;
+        }
+
+        /* Student Details */
+
+        .student-details {
+            background: white;
+            padding: 25px;
+            border-left: 5px solid #c6a66b;
+            border-radius: 6px;
+            box-shadow: 0 3px 12px #0000000a;
+        }
+
+        .student-details h2 {
+            color: #1e3557;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #dce2ea;
+            padding-bottom: 10px;
+        }
+
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .detail label {
+            display: block;
+            color: #657286;
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+
+        .detail p {
+            font-size: 18px;
+            font-weight: bold;
+            overflow-wrap: anywhere;
+        }
+
+        /* Records Heading */
+
+        .records-heading {
+            margin: 35px 0 20px;
+            color: #1e3557;
+            font-size: 28px;
+        }
+
+        /* Search */
+
+        .search-box {
+            width: 100%;
+            padding: 12px;
+            font-family: "Times New Roman", Times, serif;
+            font-size: 17px;
+            border: 1px solid #cbd4e0;
+            border-radius: 5px;
+            margin-bottom: 25px;
+        }
+
+        /* PDF Cards */
+
+        .records-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .record-card {
+            background: white;
+            border: 1px solid #dce2ea;
+            border-radius: 7px;
+            padding: 22px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 12px #00000008;
+        }
+
+        .week {
+            display: inline-block;
+            background: #edf2f7;
+            color: #1e3557;
+            border: 1px solid #d8e2ed;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-weight: bold;
+            width: fit-content;
+        }
+
+        .record-card h3 {
+            color: #1e3557;
+            font-size: 23px;
+            margin: 14px 0;
+        }
+
+        .record-card h4 {
+            color: #315b86;
+            margin: 12px 0 5px;
+            font-size: 16px;
+        }
+
+        .record-card p {
+            font-size: 16px;
+        }
+
+        .concept {
+            background: #f7f9fb;
+            border-left: 3px solid #a8b9cc;
+            padding: 12px;
+            margin-top: 12px;
+        }
+
+        /* Buttons */
+
+        .buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: auto;
+            padding-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            text-decoration: none;
+            padding: 10px 14px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 16px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .open-btn {
+            color: #1e3557;
+            background: white;
+            border: 1px solid #1e3557;
+        }
+
+        .open-btn:hover {
+            background: #edf2f7;
+        }
+
+        .download-btn {
+            background: #1e3557;
+            color: white;
+            border: 1px solid #1e3557;
+        }
+
+        .download-btn:hover {
+            background: #142640;
+        }
+
+        /* Footer */
+
+        footer {
+            background: #142640;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        /* Responsive Design */
+
+        @media (max-width: 750px) {
+            .records-container {
+                grid-template-columns: 1fr;
+            }
+
+            .details-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            header h1 {
+                font-size: 30px;
+            }
+        }
+
+        @media (max-width: 450px) {
+            .details-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                width: 94%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>JAVA LAB RECORD</h1>
+        <p>Java Programming Laboratory</p>
+    </header>
+
+    <main class="container">
+
+        <!-- Student Details -->
+
+        <section class="student-details">
+
+            <h2>Student Details</h2>
+
+            <div class="details-grid">
+
+                <div class="detail">
+                    <label>Name</label>
+                    <p>S. Navdeep</p>
+                </div>
+
+                <div class="detail">
+                    <label>Roll Number</label>
+                    <p>25EU02124</p>
+                </div>
+
+                <div class="detail">
+                    <label>Section</label>
+                    <p>AIML 2</p>
+                </div>
+
+                <div class="detail">
+                    <label>Subject Code</label>
+                    <p>24CS281</p>
+                </div>
+
+                <div class="detail">
+                    <label>Subject</label>
+                    <p>Java Programming Lab</p>
+                </div>
+
+                <div class="detail">
+                    <label>College Name</label>
+                    <p>Not provided</p>
+                </div>
+
+            </div>
+        </section>
+
+        <h2 class="records-heading">Weekly Lab Records</h2>
+
+        <input
+            type="search"
+            class="search-box"
+            id="searchBox"
+            placeholder="Search by week or topic..."
+            aria-label="Search lab records"
+        >
+
+        <section class="records-container" id="recordsContainer">
+
+            <!-- Week 01 -->
+
+            <article class="record-card">
+                <span class="week">WEEK 01</span>
+                <h3>Basic Java Concepts</h3>
+
+                <h4>AIM</h4>
+                <p>
+                    To understand Java fundamentals, data types,
+                    variables, operators, and control statements.
+                </p>
+
+                <div class="concept">
+                    <h4>CONCEPT</h4>
+                    <p>
+                        Introduction to Java programming, primitive
+                        data types, variables, arithmetic operations,
+                        and basic control statements.
+                    </p>
+                </div>
+
+                <div class="buttons">
+                    <a class="btn open-btn"
+                       href="pdfs/Week-01.pdf"
+                       target="_blank"
+                       rel="noopener">
+                        Open PDF
+                    </a>
+
+                    <a class="btn download-btn"
+                       href="pdfs/Week-01.pdf"
+                       download>
+                        Download
+                    </a>
+                </div>
+            </article>
+
+            <!-- Week 02 -->
+
+            <article class="record-card">
+                <span class="week">WEEK 02</span>
+                <h3>Classes and Objects</h3>
+
+                <h4>AIM</h4>
+                <p>
+                    To understand classes, objects, constructors,
+                    and object-oriented programming.
+                </p>
+
+                <div class="concept">
+                    <h4>CONCEPT</h4>
+                    <p>
+                        Classes define object structures, while
+                        objects represent instances of classes.
+                        Constructors initialize objects.
+                    </p>
+                </div>
+
+                <div class="buttons">
+                    <a class="btn open-btn"
+                       href="pdfs/Week-02.pdf"
+                       target="_blank"
+                       rel="noopener">
+                        Open PDF
+                    </a>
+
+                    <a class="btn download-btn"
+                       href="pdfs/Week-02.pdf"
+                       download>
+                        Download
+                    </a>
+                </div>
+            </article>
+
+            <!-- Week 03 -->
+
+            <article class="record-card">
+                <span class="week">WEEK 03</span>
+                <h3>Java OOP Concepts</h3>
+
+                <h4>AIM</h4>
+                <p>
+                    To practise Java programs involving
+                    classes, objects, and methods.
+                </p>
+
+                <div class="concept">
+                    <h4>CONCEPT</h4>
+                    <p>
+                        Object-oriented programming organizes
+                        programs using classes, objects,
+                        methods, and data.
+                    </p>
+                </div>
+
+                <div class="buttons">
+                    <a class="btn open-btn"
+                       href="pdfs/Week-03.pdf"
+                       target="_blank"
+                       rel="noopener">
+                        Open PDF
+                    </a>
+
+                    <a class="btn download-btn"
+                       href="pdfs/Week-03.pdf"
+                       download>
+                        Download
+                    </a>
+                </div>
+            </article>
+
+            <!-- Week 04 -->
+
+            <article class="record-card">
+                <span class="week">WEEK 04</span>
+                <h3>Strings and Inheritance</h3>
+
+                <h4>AIM</h4>
+                <p>
+                    To practise Java programs involving strings,
+                    inheritance, and related language features.
+                </p>
+
+                <div class="concept">
+                    <h4>CONCEPT</h4>
+                    <p>
+                        String handling and inheritance are
+                        important features used in Java programs.
+                    </p>
+                </div>
+
+                <div class="buttons">
+                    <a class="btn open-btn"
+                       href="pdfs/Week-04.pdf"
+                       target="_blank"
+                       rel="noopener">
+                        Open PDF
+                    </a>
+
+                    <a class="btn download-btn"
+                       href="pdfs/Week-04.pdf"
+                       download>
+                        Download
+                    </a>
+                </div>
+            </article>
+
+            <!-- Week 05 -->
+
+            <article class="record-card">
+                <span class="week">WEEK 05</span>
+                <h3>Java Language Features</h3>
+
+                <h4>AIM</h4>
+                <p>
+                    To practise core Java language features
+                    and object-oriented programming.
+                </p>
+
+                <div class="concept">
+                    <h4>CONCEPT</h4>
+                    <p>
+                        Java provides classes, methods,
+                        objects, and other features for
+                        building structured programs.
+                    </p>
+                </div>
+
+                <div class="buttons">
+                    <a class="btn open-btn"
+                       href="pdfs/Week-05.pdf"
+                       target="_blank"
+                       rel="noopener">
+                        Open PDF
+                    </a>
+
+                    <a class="btn download-btn"
+                       href="pdfs/Week-05.pdf"
+                       download>
+                        Download
+                    </a>
+                </div>
+            </article>
+
+            <!-- Week 06 -->
+
+            <article class="record-card">
+                <span class="week">WEEK 06</span>
+                <h3>Object-Oriented Programming</h3>
+
+                <h4>AIM</h4>
+                <p>
+                    To demonstrate Java classes and
+                    object-oriented programming techniques.
+                </p>
+
+                <div class="concept">
+                    <h4>CONCEPT</h4>
+                    <p>
+                        Java uses classes and objects to
+                        represent data and define behavior.
+                    </p>
+                </div>
+
+                <div class="buttons">
+                    <a class="btn open-btn"
+                       href="pdfs/Week-06.pdf"
+                       target="_blank"
+                       rel="noopener">
+                        Open PDF
+                    </a>
+
+                    <a class="btn download-btn"
+                       href="pdfs/Week-06.pdf"
+                       download>
+                        Download
+                    </a>
+                </div>
+            </article>
+
+            <!-- Week 07 -->
+
+            <article class="record-card">
+                <span class="week">WEEK 07</span>
+                <h3>Method Overloading and Objects</h3>
+
+                <h4>AIM</h4>
+                <p>
+                    To demonstrate method overloading,
+                    passing objects, and returning objects.
+                </p>
+
+                <div class="concept">
+                    <h4>CONCEPT</h4>
+                    <p>
+                        Method overloading allows methods
+                        to share a name with different
+                        parameter lists.
+                    </p>
+                </div>
+
+                <div class="buttons">
+                    <a class="btn open-btn"
+                       href="pdfs/Week-07.pdf"
+                       target="_blank"
+                       rel="noopener">
+                        Open PDF
+                    </a>
+
+                    <a class="btn download-btn"
+                       href="pdfs/Week-07.pdf"
+                       download>
+                        Download
+                    </a>
+                </div>
+            </article>
+
+            <!-- Week 08 -->
+
+            <article class="record-card">
+                <span class="week">WEEK 08</span>
+                <h3>Inheritance and Keywords</h3>
+
+                <h4>AIM</h4>
+                <p>
+                    To implement Java inheritance and
+                    practise important Java keywords.
+                </p>
+
+                <div class="concept">
+                    <h4>CONCEPT</h4>
+                    <p>
+                        Inheritance allows a class to acquire
+                        fields and methods from another class.
+                    </p>
+                </div>
+
+                <div class="buttons">
+                    <a class="btn open-btn"
+                       href="pdfs/Week-08.pdf"
+                       target="_blank"
+                       rel="noopener">
+                        Open PDF
+                    </a>
+
+                    <a class="btn download-btn"
+                       href="pdfs/Week-08.pdf"
+                       download>
+                        Download
+                    </a>
+                </div>
+            </article>
+
+            <!-- Week 09 -->
+
+            <article class="record-card">
+                <span class="week">WEEK 09</span>
+                <h3>User-Defined Packages</h3>
+
+                <h4>AIM</h4>
+                <p>
+                    To create user-defined packages and
+                    access classes from other programs.
+                </p>
+
+                <div class="concept">
+                    <h4>CONCEPT</h4>
+                    <p>
+                        Packages organize related Java classes.
+                        Import statements allow classes to be
+                        accessed from other packages.
+                    </p>
+                </div>
+
+                <div class="buttons">
+                    <a class="btn open-btn"
+                       href="pdfs/Week-09.pdf"
+                       target="_blank"
+                       rel="noopener">
+                        Open PDF
+                    </a>
+
+                    <a class="btn download-btn"
+                       href="pdfs/Week-09.pdf"
+                       download>
+                        Download
+                    </a>
+                </div>
+            </article>
+
+            <!-- Week 10 -->
+
+            <article class="record-card">
+                <span class="week">WEEK 10</span>
+                <h3>Exception Handling</h3>
+
+                <h4>AIM</h4>
+                <p>
+                    To demonstrate exception handling using
+                    try, catch, finally, throw, and throws.
+                </p>
+
+                <div class="concept">
+                    <h4>CONCEPT</h4>
+                    <p>
+                        Exception handling allows programs
+                        to respond to errors and exceptional
+                        conditions during execution.
+                    </p>
+                </div>
+
+                <div class="buttons">
+                    <a class="btn open-btn"
+                       href="pdfs/Week-10.pdf"
+                       target="_blank"
+                       rel="noopener">
+                        Open PDF
+                    </a>
+
+                    <a class="btn download-btn"
+                       href="pdfs/Week-10.pdf"
+                       download>
+                        Download
+                    </a>
+                </div>
+            </article>
+
+            <!-- Week 11 -->
+
+            <article class="record-card">
+                <span class="week">WEEK 11</span>
+                <h3>Java File Handling</h3>
+
+                <h4>AIM</h4>
+                <p>
+                    To practise file input and output
+                    using Java Reader and Writer classes.
+                </p>
+
+                <div class="concept">
+                    <h4>CONCEPT</h4>
+                    <p>
+                        File handling supports reading,
+                        writing, and copying data between
+                        files using Java I/O classes.
+                    </p>
+                </div>
+
+                <div class="buttons">
+                    <a class="btn open-btn"
+                       href="pdfs/Week-11.pdf"
+                       target="_blank"
+                       rel="noopener">
+                        Open PDF
+                    </a>
+
+                    <a class="btn download-btn"
+                       href="pdfs/Week-11.pdf"
+                       download>
+                        Download
+                    </a>
+                </div>
+            </article>
+
+            <!-- Week 12 -->
+
+            <article class="record-card">
+                <span class="week">WEEK 12</span>
+                <h3>Multithreading and Lambda Expressions</h3>
+
+                <h4>AIM</h4>
+                <p>
+                    To demonstrate multithreading and
+                    related Java programming concepts.
+                </p>
+
+                <div class="concept">
+                    <h4>CONCEPT</h4>
+                    <p>
+                        Multithreading enables concurrent
+                        execution of tasks. Synchronization
+                        helps coordinate access to shared data.
+                    </p>
+                </div>
+
+                <div class="buttons">
+                    <a class="btn open-btn"
+                       href="pdfs/Week-12.pdf"
+                       target="_blank"
+                       rel="noopener">
+                        Open PDF
+                    </a>
+
+                    <a class="btn download-btn"
+                       href="pdfs/Week-12.pdf"
+                       download>
+                        Download
+                    </a>
+                </div>
+            </article>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>JAVA LAB RECORD</p>
+        <p>S. Navdeep | 25EU02124 | AIML 2</p>
+        <p>Subject Code: 24CS281</p>
+    </footer>
+
+    <script>
+        const searchBox = document.getElementById("searchBox");
+        const recordCards = document.querySelectorAll(".record-card");
+
+        searchBox.addEventListener("input", function () {
+            const searchText = this.value.toLowerCase().trim();
+
+            recordCards.forEach(function (card) {
+                const cardText = card.innerText.toLowerCase();
+
+                if (cardText.includes(searchText)) {
+                    card.style.display = "flex";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
